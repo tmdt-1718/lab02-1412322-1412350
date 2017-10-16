@@ -2,7 +2,7 @@
     <div class="card" data-conversation-id="<%= conversation.id %>">
         <div class="card-header">
           <%= link_to conversation.opposed_user(user).email, '', class: "toggle-window" %>
-          <%= link_to "x", close_conversation_path(conversation), class: "btn btn-secondary btn-xs float-right" %>
+          <%= link_to "x", close_conversation_path(conversation), class: "btn btn-secondary btn-xs float-right", method: :post, remote: true%>
         </div>
         <div class="card-body" style="display: none;">
             <div class="messages-list">
@@ -12,17 +12,18 @@
             </div>
         </div>
         <div class="card-footer" style="display: none;">
-            <%= form_for [conversation, conversation.messages.new], remote: true do |f| %>
-              <%= f.hidden_field :user_id, value: user.id %>
-            <div class="row">                          
-              <div class="col-md-9">
-              <%= f.text_area :content, class: "form-control" %>
+            <form class="new_message">
+              <input name="conversation_id" type="hidden" value="<%= conversation.id %>">
+              <input name="user_id" type="hidden" value="<%= user.id %>">
+              <div class="row">  
+                <div class="col-md-9">
+                  <textarea name="content" class="form-control"></textarea>
+                </div>
+                <div class="col-md-3">
+                  <input type="submit" class="btn btn-success" value="Send">
+                </div>                                      
               </div>
-              <div class="col-md-3">
-              <%= f.submit "Send", class: "btn btn-success" %>
-              </div>
-            </div>            
-            <% end %> 
+            </form>
         </div>
     </div>
 </li>
