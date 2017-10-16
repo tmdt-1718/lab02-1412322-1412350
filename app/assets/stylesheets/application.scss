@@ -25,7 +25,9 @@ ul {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
+body {
+	margin-top: 20px;
+}
 
 .message-sent {
   position: relative;
@@ -35,8 +37,6 @@ ul {
   padding: 10px;
   float: right;
 }
-
-
 .message-received {
   background-color: #F1F0F0;
   border-color: #EEEEEE;

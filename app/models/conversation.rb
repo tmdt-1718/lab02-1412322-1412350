@@ -21,4 +21,13 @@ class Conversation < ApplicationRecord
   def opposed_user(user)
     user == recipient ? sender : recipient
   end
+  def get_time(time)
+    date = time.localtime.strftime('%T')
+    today_tmp = Time.now().strftime('%F')
+    if today_tmp == time.localtime.strftime('%F')
+      return date
+    else
+      return time.localtime.strftime('%F %T')
+    end
+  end
 end
