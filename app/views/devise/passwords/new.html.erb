@@ -1,16 +1,20 @@
-<h2>Forgot your password?</h2>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: "middle-form"}) do |f| %>
+  <div class="logo-icon mx-auto text-center">
+    <%= image_tag asset_url("icon.png"), class:"img-fluid" %>
+  </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <h2>Forgot your password?</h2>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, type: "email", placeholder: "Enter your email" %>
   </div>
+
+  <%= devise_error_messages! %>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Send me reset password", class: "primary-button" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+<% end %>
