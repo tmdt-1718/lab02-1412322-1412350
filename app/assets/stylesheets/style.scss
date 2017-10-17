@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+$background-color1: #2E2E2E;
+$background-color2: #FFF;
+$border-color: #E5E5E5;
+$primary-color: #2681FF;
+$primary-hover-color: #6FAEFF;
+$text-color1: #FFF;
+$text-color2: #000;
+$success-color: #26FF67;
+$danger-color: #FF3838;
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    background-color: $background-color1;
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+.login-form {
+    border-radius: 5px;
+    margin: 50px auto;
+    background-color: $background-color2;
+    width: 400px;
+    padding: 20px;
+    .field {
+        margin: 10px 0;
+    }
+    .rememberme-field {
+        font-size: 13px;
+    }
+    h2 {
+        color: $primary-color;
+    }
+}
+
+form {
+    input[type="email"], input[type="password"], input[type="text"] {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid $border-color;
+        &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px white inset !important;
+            
+            border: 1px solid $border-color !important;
+        }
+    }
+    label {
+        opacity: 0.6;
+    }
+}
+
+.shared-link {
+    a {
+        text-decoration: none;
+        font-size: 13px;
+        color: $primary-color;
+        &:hover {
+            color: $primary-hover-color;
+        }
+    }
+}
+
+.primary-button {
+    background-color: $primary-color;
+    color: $text-color1;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin: 10px 0;
+    color: $text-color1;
+    &:hover {
+        background-color: $primary-hover-color;
+    }
+}
+
+.alert {
+    width: 100%;
+    margin: 10px 0;
+    color: $text-color1;
+    font-size: 14px;
+    padding: 10px;
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: $success-color;
+}
+.alert-danger {
+    background-color: $danger-color;
+}
