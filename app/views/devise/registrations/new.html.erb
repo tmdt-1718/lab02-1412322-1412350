@@ -5,12 +5,12 @@
   <h2>Sign up</h2>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, type: "email", placeholder: "Enter your email" %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name, autofocus: true, type: "text", placeholder: "Enter your name" %>
   </div>
 
@@ -18,12 +18,12 @@
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password, autocomplete: "off", type: "password", placeholder: "Enter your password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off", type: "password", placeholder: "Confirm your password" %>
   </div>
 

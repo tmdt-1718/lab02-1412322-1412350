@@ -39,6 +39,9 @@ body {
     }
     .field {
         margin: 10px 0;
+        label {
+            display: inline-block;
+        }
     }
     .rememberme-field {
         font-size: 13px;
