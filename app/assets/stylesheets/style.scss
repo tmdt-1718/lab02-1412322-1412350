@@ -28,7 +28,7 @@ body {
     margin: 50px auto;
     background-color: $background-color2;
     min-width: 300px;
-    max-width: 350px;
+    max-width: 380px;
     width: 50%;
     padding: 20px;
     .logo-icon {
@@ -55,6 +55,7 @@ form {
         padding: 0 10px;
         border: 1px solid $border-color;
         border-radius: 0px;
+        font-size: 14px;
         &:-webkit-autofill {
             -webkit-box-shadow: 0 0 0 1000px white inset !important;
             
