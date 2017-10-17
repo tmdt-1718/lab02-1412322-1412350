@@ -1,14 +1,18 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "login-form"}) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "middle-form"}) do |f| %>
+  <div class="logo-icon mx-auto text-center">
+    <%= image_tag asset_url("icon.png"), class:"img-fluid" %>
+  </div>
+
   <h2>Log in</h2>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: "form-control", type: "email", placeholder: "Input your email", value: "nhatminh190496@gmail.com"%>
+    <%= f.email_field :email, autofocus: true, type: "email", placeholder: "Enter your email", value: "nhatminh190496@gmail.com" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", type: "password", placeholder: "Enter your password", value: "123456" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
