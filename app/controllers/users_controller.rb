@@ -8,4 +8,8 @@ class UsersController < ApplicationController
   def get_conversation(user_id)
     return Conversation.between(current_user.id, user_id).first
   end
+  def index
+    @users = User.all.where.not(id: current_user)    
+    @relationships = Relationship.where("user_1_id = ? or user_2_id = ?", current_user, current_user)
+  end
 end
