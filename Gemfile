@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem "font-awesome-rails"
+
 gem 'bootstrap', '~> 4.0.0.beta'
 
 gem 'jquery-rails'
