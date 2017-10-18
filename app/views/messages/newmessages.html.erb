@@ -2,7 +2,14 @@
   <div class="col-lg-4">
       <div class="card">
           <div class="card-header bg-primary">
-               <h3 class="card-title">User list</h3>
+            <div class="d-flex justify-content-between">
+
+              <h3 class="card-title">Friend List</h3>  
+                     
+              <div class="d-flex align-items-center">
+                <%= link_to "Conversation List", conversations_path, class: "secondary-button"%>
+              </div>
+            </div>
           </div>
           <div class="card-body">
             <ul class="friend-list">

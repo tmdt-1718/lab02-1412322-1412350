@@ -177,8 +177,13 @@ $color_tapa_approx: #777;
     .card-header {
         border: none !important;
         border-radius: 0px !important;
+        background-color: $primary-color !important;
         .card-title {
             color: $text-color1;
+        }
+        a {
+            color: $text-color1;
+            text-decoration: none !important;
         }
 
     }
