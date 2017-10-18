@@ -1,17 +1,16 @@
 <div class="row">
   <div class="col-lg-4">
     <div class="card">
-      <div class="card-header bg-primary">
+      <div class="card-header">
         <div class="d-flex justify-content-between">
-
           <h3 class="card-title">Conversation List</h3>
-                  
           <div class="d-flex align-items-center">
             <%= link_to "Friend List", new_messages_path, class: "secondary-button"%>
           </div>
         </div>
       </div>
       <div class="card-body" id="conversations">
+        <%= link_to "Create New Conversation", new_messages_path %>
         <ul class="friend-list">
           <% if @conversations.count == 0 %>
             <div class="clearfix">
@@ -41,6 +40,11 @@
             <% end %>
           <%end%>
         </ul>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex align-items-center">
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "secondary-button" %>
+        </div>
       </div>
     </div>
   </div>

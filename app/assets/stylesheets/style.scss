@@ -16,9 +16,11 @@ $danger-color: #FF3838;
     -moz-box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
 body {
     background-color: $background-color1 !important;
-    height: 100%;
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
 }
@@ -170,10 +172,14 @@ $color_gallery_approx: #eee;
 $color_alice_blue_approx: #f1f5fc;
 $color_tapa_approx: #777;
 .card {
-    min-height: 700px;
     height: 100%;
     border: none !important;
     border-radius: 0px !important;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    
     .card-header {
         border: none !important;
         border-radius: 0px !important;
@@ -188,7 +194,14 @@ $color_tapa_approx: #777;
 
     }
     .card-body {
-
+        height: 600px;
+        a {
+            text-decoration: none !important;
+            color: $primary-color;
+            &:hover {
+                color: $primary-hover-color;
+            }
+        }
     }
 }
 
