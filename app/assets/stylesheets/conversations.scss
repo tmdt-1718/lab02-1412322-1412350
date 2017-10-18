@@ -27,11 +27,14 @@ $white: #fff;
 $color_gallery_approx: #eee;
 $color_alice_blue_approx: #f1f5fc;
 $color_tapa_approx: #777;
-
+.card {
+	min-height: 700px;
+}
 .bg-white {
 	background-color: $white;
 }
 .friend-list {
+	padding: 20px;
 	list-style: none;
 	margin-left: -40px;
 	li {
@@ -53,7 +56,7 @@ $color_tapa_approx: #777;
 				&:hover {
 					color: $color_tapa_approx;
 				}
-			}
+      }
 			.last-message {
 				width: 65%;
 				white-space: nowrap;
@@ -98,10 +101,12 @@ body {
 }
 .panel {
 	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 2px 0 $black_7_5;
 	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 	border-radius: 0;
-	border: 0;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #5fa2dd;
+	min-height: 700px;
 	margin-bottom: 24px;
 	.panel-heading {
 		//Instead of the line below you could use @include border-top-left-radius($radius)

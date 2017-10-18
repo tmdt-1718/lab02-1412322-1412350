@@ -4,3 +4,7 @@ conversation.find('textarea').val('');
 var messages_list = conversation.find('.messages-list');
 var height = messages_list[0].scrollHeight;
 messages_list.scrollTop(height);
+var conversations = $('#conversations');
+if (conversations.length !== 0) {
+conversations.html("<%= j(render 'conversations/conversations_list', conversations: @conversations, user: current_user) %>");
+}

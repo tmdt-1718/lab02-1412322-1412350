@@ -1,13 +1,13 @@
 var conversations = $('#conversations-list');
 var conversation = conversations.find("[data-conversation-id='" + "<%= @conversation.id %>" + "']");
-
 if (conversation.length !== 1) {
   conversations.append("<%= j(render 'conversations/conversation', conversation: @conversation, user: current_user) %>");
   conversation = conversations.find("[data-conversation-id='" + "<%= @conversation.id %>" + "']");
 }
-
+conversations.find('.card-body').hide();
+conversations.find('.card-footer').hide();
 conversation.find('.card-body').show();
-conversation.find('.card-footer').show();
+conversation.find('.card-footer ').show();
 
 var messages_list = conversation.find('.messages-list');
 var height = messages_list[0].scrollHeight;
