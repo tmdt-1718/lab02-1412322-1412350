@@ -20,8 +20,11 @@
   $(document).on('click', '.toggle-window', function(e) {
     e.preventDefault();
     var panel = $(this).parent().parent();
+    var conversations = panel.parent().parent();
+    console.log(conversations)
     var messages_list = panel.find('.messages-list');
- 
+    conversations.find('.card-body').not(panel.find('.card-body')).hide();
+    conversations.find('.card-footer').not(panel.find('.card-footer')).hide();
     panel.find('.card-body').toggle();
     panel.find('.card-footer').toggle();
     panel.attr('class', 'card');
@@ -30,7 +33,7 @@
       var height = messages_list[0].scrollHeight;
       messages_list.scrollTop(height);
     }
-    
   });
 })();
+
 

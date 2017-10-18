@@ -1,0 +1,7 @@
+var conversation = $('#conversations-list');
+if (conversation.length !== 0) {
+  conversation.html("<%= j(render 'conversations/conversation_container', conversation: @conversation, user: current_user) %>");
+}
+var messages_list = conversation.find('.messages-list');
+var height = messages_list[0].scrollHeight;
+messages_list.scrollTop(height);

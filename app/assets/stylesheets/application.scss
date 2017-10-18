@@ -21,12 +21,12 @@ ul {
   list-style: none;
 }
 .messages-list {
-  max-height: 200px;
+  max-height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 body {
-	margin-top: 20px;
+	padding: 20px;
 }
 
 .message-sent {

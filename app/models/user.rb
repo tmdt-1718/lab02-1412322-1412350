@@ -6,19 +6,28 @@ class User < ApplicationRecord
   validates :name, presence: true
   has_many :messages
   has_many :conversations, foreign_key: :sender_id 
+
   def get_conversation(user_id1, user_id2)
     conversation = Conversation.between(user_id1, user_id2).first
   end
   def get_conversation_last_message(user_id1, user_id2)
-    conversation = Conversation.between(user_id1, user_id2).first
+    conversation = Conversation.includes(:messages).between(user_id1, user_id2).first
     if conversation.present?
       if conversation.messages.count >= 1
-        return conversation.messages.last.content  
+        if conversation.messages.last.user_id == user_id2
+          return "You: " + conversation.messages.last.content
+        else
+          return conversation.messages.last.content 
+        end
       else return 'Has no message yet'
       end
     else
       if conversation.messages.count >= 1
-        return conversation.messages.last.content  
+        if conversation.messages.last.user_id == user_id2
+          return "You: " + conversation.messages.last.content
+        else
+          return conversation.messages.last.content 
+        end 
       else return 'Has no message yet'
       end
     end  

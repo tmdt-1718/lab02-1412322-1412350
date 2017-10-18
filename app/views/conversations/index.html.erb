@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header bg-primary">
+      <div class="row">
+        <div class="col-md-8">
+        <h3 class="card-title">Conversation list</h3>
+        </div>
+        <div class="col-md-4">
+         <%= link_to "+", new_messages_path, class: "btn btn-secondary btn-xs float-right"%>
+        </div>
+      </div>
+      </div>
+      <div class="card-body" id="conversations">
+        <ul class="friend-list">
+          <% if @conversations.count == 0 %>
+            <div class="clearfix">
+              <div class="friend-name text-center">
+              <strong> Have no conversation yet! </strong> 
+            </div>
+            </div>
+          <%else%>
+          <% @conversations.each do |conversation| %>
+            <li>
+            <% if conversation.messages.count > 0%>
+              <%= link_to conversation_path(conversation.id), remote: true do %>
+                <div class="clearfix">
+                  <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="rounded-circle">
+                  <div class="friend-name">
+                    <strong><%=conversation.opposed_user(current_user).name%></strong>
+                  </div>
+                  <div class="last-message text-muted">
+                    <%= @user.get_conversation_last_message(conversation.opposed_user(current_user).id, @user.id)%>
+                  </div>
+                  <small class="time text-muted"><%=@user.get_conversation_last_message(conversation.opposed_user(current_user).id, @user.id) == 'Has no message yet' ? 'Invalid' : (time_ago_in_words @user.get_conversation(conversation.opposed_user(current_user).id, @user.id).messages.first.created_at)%></small>
+                  <small class="chat-alert label label-danger">1</small>
+                </div>
+                <%end%>
+            <%end%>
+            </li>
+            <% end %>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div id="conversations-list">
+    
+    </div>
+  </div>
+</div>
