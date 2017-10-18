@@ -71,7 +71,7 @@ form {
 
 .shared-link {
     a {
-        text-decoration: none;
+        text-decoration: none !important;
         font-size: 13px;
         color: $primary-color;
         &:hover {
