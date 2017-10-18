@@ -28,6 +28,12 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem "figaro"
+
+gem "omniauth"
+
+gem "omniauth-facebook"
+
 gem "font-awesome-rails"
 
 gem 'bootstrap', '~> 4.0.0.beta'
