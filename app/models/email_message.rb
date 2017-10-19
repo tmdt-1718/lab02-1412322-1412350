@@ -1,0 +1,2 @@
+class EmailMessage < ApplicationRecord
+end
