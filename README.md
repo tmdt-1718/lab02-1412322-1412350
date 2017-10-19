@@ -16,11 +16,11 @@ Yêu cầu **GIT**:
 * [ ] Sử dụng GIT theo [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
 
 Yêu cầu **bắt buộc**
-* [ ] Đăng ký tài khoản bằng email, password, và tên.  (**MSSV**)
-* [ ] Đăng nhập bằng email và password. (**MSSV**)
+* [ ] Đăng ký tài khoản bằng email, password, và tên.  (1412350)
+* [ ] Đăng nhập bằng email và password. (1412350)
 * [ ] Sau khi đăng nhập, người dùng sẽ được chuyển đến trang liệt kê danh sách các tin nhắn đã nhận, sắp xếp theo thứ tự thời gian, một nút để tạo tin nhắn mới, nút để xem danh sách bạn bè và nút để xem các tin nhắn đã gửi. (**MSSV**)
 * [ ] Tin nhắn chưa đọc phải được làm nổi bật hơn các tin nhắn khác. (**MSSV**)
-* [ ] Nhấn vào nút "xem danh sách bạn" sẽ chuyển người dùng đến trang liệt kê danh sách người dùng cùng với các chức năng thêm bạn. (**MSSV**)
+* [ ] Nhấn vào nút "xem danh sách bạn" sẽ chuyển người dùng đến trang liệt kê danh sách người dùng cùng với các chức năng thêm bạn. (1412350)
 * [ ] Nhấn nút "tạo tin nhắn" sẽ chuyển sang giao diện cho phép người dùng gửi tin nhắn cho người dùng trong danh sách bạn bè. Người gửi phải nằm trong danh sách bạn bè và cho phép người dùng chọn qua dropdown. (**MSSV**)
 * [ ] Nhấn "xem tin đã gửi" sẽ chuyển sang giao diện hiển thị danh sách tin nhắn đã gửi. Mỗi tin nhắn cần hiện thời gian người nhận đã đọc. (**MSSV**)
 * [ ] Mỗi người dùng chỉ có thể đọc tin nhắn 1 lần duy nhất. (**MSSV**)
@@ -39,8 +39,8 @@ Yêu cầu **không bắt buộc**:
 * [ ] Người dùng có thể gửi tin nhắn cho người dùng ngoài hệ thống. Khi đó, người nhận sẽ nhận được 1 email chứa link đăng ký tài khoản. Sau khi đăng ký tài khoản, họ có thể xem tin nhắn đã nhận. (**MSSV**)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
-* [ ] Chức năng 1
-* [ ] Chức năng 2
+* [ ] Tạo conversation/Chat realtime giữa các user (1412350)
+* [ ] Sắp xếp conversation list theo thứ tự thời gian dựa trên thời gian gửi tin nhắn cuối cùng của mỗi conversation (1412350)
 
 ## Demo
 
