@@ -28,21 +28,6 @@ body {
 	padding: 20px;
 }
 
-.message-sent {
-  position: relative;
-  background-color: #D9EDF7;
-  border-color: #BCE8F1;
-  margin: 5px 20px;
-  padding: 10px;
-  float: right;
-}
-.message-received {
-  background-color: #F1F0F0;
-  border-color: #EEEEEE;
-  margin: 5px 20px;
-  padding: 10px;
-  float: left;
-}
 $color_1: #212121;
 $color_2: #757575;
 $color_3: #ffffff;
@@ -260,11 +245,9 @@ body {
 	transform: translate3d(-280px, 0, 0);
 	&:before {
 		content: " ";
-		display: table;
 	}
 	&:after {
 		content: " ";
-		display: table;
 		clear: both;
 	}
 	&::-webkit-scrollbar-track {
@@ -316,11 +299,9 @@ body {
 		transition: all 0.2s ease-in-out;
 		&:before {
 			content: " ";
-			display: table;
 		}
 		&:after {
 			content: " ";
-			display: table;
 			clear: both;
 		}
 	}

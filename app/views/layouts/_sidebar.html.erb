@@ -1,4 +1,3 @@
-<div class="sidebar-overlay"></div>
 
 <!-- Material sidebar -->
 <aside id="sidebar" class="sidebar sidebar-default open" role="navigation">
@@ -25,7 +24,7 @@
     </div>
 
     <!-- Sidebar navigation -->
-    <button class="btn btn-danger text-center"> Create messages </button>
+    <%= link_to 'Create messages', new_user_email_message_path(current_user), class:"btn btn-danger text-center" %>
     <ul class="nav sidebar-nav">
         <li class="dropdown">
             <ul id="settings-dropdown" class="dropdown-menu">
