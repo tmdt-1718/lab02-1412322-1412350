@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     end
     resources :messages, only: [:create]
   end
+  resources :users, only: [:index] do
+    resources :relationships, only: [:create, :update, :destroy]
+  end
 end

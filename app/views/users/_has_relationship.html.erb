@@ -1,0 +1,5 @@
+<% if current_user.is_pending(user, current_user)%>
+  <%= render 'pending', user: user%>
+<%else%>
+  <%= render 'friend', user: user%>
+<%end%>

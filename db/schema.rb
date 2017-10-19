@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015134627) do
+ActiveRecord::Schema.define(version: 20171018141317) do
 
   create_table "conversations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "recipient_id"
@@ -30,6 +30,18 @@ ActiveRecord::Schema.define(version: 20171015134627) do
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_1_id"
+    t.integer "user_2_id"
+    t.integer "action_user_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_1_id", "user_2_id"], name: "index_relationships_on_user_1_id_and_user_2_id", unique: true
+    t.index ["user_1_id"], name: "index_relationships_on_user_1_id"
+    t.index ["user_2_id"], name: "index_relationships_on_user_2_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
