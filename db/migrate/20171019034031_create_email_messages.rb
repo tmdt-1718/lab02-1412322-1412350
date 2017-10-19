@@ -3,7 +3,8 @@ class CreateEmailMessages < ActiveRecord::Migration[5.1]
     create_table :email_messages do |t|
       t.integer :sender_id
       t.integer :recipient_id
-      t.integer :content
+      t.string :content
+      t.string :url
       t.datetime :seen_at
 
       t.timestamps

@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(version: 20171019034031) do
   create_table "email_messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
-    t.integer "content"
+    t.string "content"
+    t.string "url"
     t.datetime "seen_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
