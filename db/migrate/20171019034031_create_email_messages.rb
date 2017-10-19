@@ -8,5 +8,8 @@ class CreateEmailMessages < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :email_messages, :recipient_id
+    add_index :email_messages, :sender_id
+    add_index :email_messages, [:recipient_id, :sender_id]
   end
 end
