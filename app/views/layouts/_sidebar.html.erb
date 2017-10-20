@@ -1,6 +1,6 @@
 
 <!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-default open" role="navigation">
+<aside class="sidebar">
     <!-- Sidebar header -->
     <div class="sidebar-header">
 
@@ -8,50 +8,49 @@
         <div class="sidebar-name">      
             <%=user.name%>
         </div>
-        <!-- Sidebar brand name -->
-        <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-            <%=user.email%>
-            <b class="caret"></b>
-        </a>
+        <div class="header-email">  
+        <%=user.email%>
+        </div>
     </div>
 
-    <!-- Sidebar navigation -->
-    <ul class="nav sidebar-nav">
-        <li>
-            <%= link_to inboxs_path do %>
-                <i class="fa-fw fa fa-inbox"></i>
-                Inbox
-            <% end %>
-        </li>
-        <li>
-            <%= link_to sentmails_path do %>
-                <i class="fa-fw fa fa-send"></i>
-                Sent mail
-            <% end %>
-        </li>
-        <li>
+    <div class="sidebar-body">
+        <div class="text-center">
             <%= link_to new_user_email_message_path(current_user) do %>
-                <i class="fa-fw fa fa-send"></i>
-                Create Message
+                <button>
+                    Create Message
+                </button>
             <% end %>
-        </li>
-        <li>
-            <%= link_to users_path do %>  
-                <i class="fa-fw fa fa-users"></i>
-                Users List
-            <% end %>
-        </li> 
-        <li>
-            <%= link_to new_messages_path do %>
-                <i class="fa-fw fa fa-heart"></i>
-                Friends List
-            <% end %>
-        </li>
-        <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa-fw fa fa-sign-out"></i>
-                Sign-out
-            <% end %>
-        </li>
-    </ul>
+        </div>
+        <ul>
+            <li>
+                <%= link_to inboxs_path do %>
+                    <i class="fa-fw fa fa-inbox"></i>
+                    Inbox
+                <% end %>
+            </li>
+            <li>
+                <%= link_to sentmails_path do %>
+                    <i class="fa-fw fa fa-send"></i>
+                    Sent mail
+                <% end %>
+            </li>
+            <li>
+                <%= link_to users_path do %>  
+                    <i class="fa-fw fa fa-users"></i>
+                    Users List
+                <% end %>
+            </li> 
+            <li>
+                <%= link_to new_messages_path do %>
+                    <i class="fa-fw fa fa-heart"></i>
+                    Friends List
+                <% end %>
+            </li>
+            <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="fa-fw fa fa-sign-out"></i>
+                    Sign-out
+                <% end %>
+            </li>
+        </ul>
 </aside>
