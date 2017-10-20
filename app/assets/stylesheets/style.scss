@@ -175,8 +175,9 @@ $color_gallery_approx: #eee;
 $color_alice_blue_approx: #f1f5fc;
 $color_tapa_approx: #777;
 .card {
+    min-height: 100%;
     height: 100%;
-    width: 400px;
+    width: 450px;
     border: none !important;
     border-radius: 0px !important;
     top: 0;
@@ -196,7 +197,7 @@ $color_tapa_approx: #777;
         }
     }
     .card-body {
-        height: 600px;
+        height: 500px;
         a {
             text-decoration: none !important;
             color: $primary-color;
@@ -204,6 +205,9 @@ $color_tapa_approx: #777;
                 color: $primary-hover-color;
             }
         }
+    }
+    .card-footer {
+
     }
 }
 

@@ -1,7 +1,5 @@
 <div class="row">
 <%= render 'layouts/sidebar', user: current_user%>
-<div class="row">
-  <div class="col-lg-4">
       <div class="card">
           <div class="card-header">
             <div class="d-flex justify-content-between">
@@ -27,13 +25,10 @@
             </ul>
           </div>
       </div>
-  </div>
-  <div class="col-lg-8">
+
       <ul id="conversations-list">
         <% @conversations.each do |conversation| %>
           <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
         <% end %>
       </ul>
-  </div> 
-</div>
 </div>
