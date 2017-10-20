@@ -2,15 +2,25 @@
 <div class="row">
 <%= render 'layouts/sidebar', user: current_user%>
 <div class="wrapper">
-          <div class="card-header">
-            <div class="d-flex justify-content-between">
-
-              <h3 class="card-title">Create Message</h3>  
-                    
+    <div class="card-header">
+      <div class="d-flex justify-content-between">
+        <h3 class="card-title">Create Message</h3>  
+              
+      </div>
+    </div>
+    <div class="card-body">
+      <%=render 'form', email_message: @email_message, conversations: @conversations, users: @users%>
+        <% if alert %>
+          <% unless alert == "You have to choose at least 1 friend to send message!"%>
+            <div class="alert alert-danger">
+              You had been blocked by <br> 
+                <%=simple_format h alert%>
+              So you don't have permission to send this email to  <%=alert%> 
             </div>
-          </div>
-          <div class="card-body">
-            <%=render 'form', email_message: @email_message, conversations: @conversations%>
-          </div>
+          <%else%>
+          <p class="alert alert-danger"><i class="fa-fw fa fa-warning"></i><%= alert %></p>
+          <%end%>
+        <% end %>
+    </div>
 </div>
 </div>

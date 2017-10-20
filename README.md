@@ -30,7 +30,7 @@ Yêu cầu **không bắt buộc**:
 * [X] Người dùng có thể gửi hình ảnh đính kèm theo thông điệp. (**1412350**)
 * [X] Người dùng có thể gửi tin nhắn đến nhiều người dùng cùng lúc. (**1412350**)
 * [X] Người dùng có thể đăng nhập với Facebook. (**1412322**)
-* [ ] Người dùng có thể block người khác. Sau khi block, người dùng sẽ không nhận được tin nhắn từ người bị block gửi nữa. (**MSSV**)
+* [X] Người dùng có thể block người khác. Sau khi block, người dùng sẽ không nhận được tin nhắn từ người bị block gửi nữa. (**1412350**)
 * [X] Người dùng có thể xóa người dùng khác ra khỏi danh sách bạn. (**1412350***)
 * [X] Người dùng có thể unblock người dùng khác. (**1412350**)
 * [ ] Khi người dùng kéo xuống cuối trang, các tin nhắn tiếp theo sẽ tự động hiển thị hoặc có nút nhấn "Xem thêm tin nhắn" để nạp thêm danh sách tin nhắn. (**MSSV**)
@@ -39,8 +39,8 @@ Yêu cầu **không bắt buộc**:
 * [ ] Người dùng có thể gửi tin nhắn cho người dùng ngoài hệ thống. Khi đó, người nhận sẽ nhận được 1 email chứa link đăng ký tài khoản. Sau khi đăng ký tài khoản, họ có thể xem tin nhắn đã nhận. (**MSSV**)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
-* [ ] Tạo conversation/Chat realtime giữa các user (1412350)
-* [ ] Sắp xếp conversation list theo thứ tự thời gian dựa trên thời gian gửi tin nhắn cuối cùng của mỗi conversation (1412350)
+* [X] Tạo conversation/Chat realtime giữa các user (1412350)
+* [X] Sắp xếp conversation list theo thứ tự thời gian dựa trên thời gian gửi tin nhắn cuối cùng của mỗi conversation (1412350)
 
 ## Demo
 
