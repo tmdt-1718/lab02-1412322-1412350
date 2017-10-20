@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :conversations, foreign_key: :sender_id 
   has_many :relationships, foreign_key: :user_1_id, dependent: :destroy 
-  has_many :email_messages, foreign_key: :sender_id
+  has_many :email_messages
   def get_conversation(user_id1, user_id2)
     conversation = Conversation.between(user_id1, user_id2).first
   end

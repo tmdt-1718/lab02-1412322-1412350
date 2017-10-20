@@ -1,16 +1,16 @@
 <%= form_for @email_message, url: user_email_messages_path(current_user), method: :post do |f| %>
   <div class="field">
-    <%= f.label :recipient_id %><br />
-    <%= f.collection_select :recipient_id, User.all.where.not(id: current_user).order(:name), :id, :name, {:multiple => true}%>
+    <%= f.collection_select :user_id, User.all.where.not(id: current_user).order(:email), :id, :email,{:prompt => "Select friends to send messages"},{:multiple => true}%>
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, class:"content-field" %>
   </div>
   <div class="field">
-    <%= f.label :url %><br />
+    <%= f.label :url, "Choose an image to send" %><br />
     <%= f.file_field :url %>
   </div>
+  </br>
   <div class="actions">
     <%= f.submit %>
   </div>

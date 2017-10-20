@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'users#home'
   get '/new_messages', to: 'messages#newmessages'
+  get '/inboxs', to: 'email_messages#inbox'
+  get '/sentmails', to: 'email_messages#sentmail'  
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',

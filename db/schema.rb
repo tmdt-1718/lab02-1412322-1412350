@@ -23,16 +23,15 @@ ActiveRecord::Schema.define(version: 20171020050755) do
   end
 
   create_table "email_messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "sender_id"
-    t.integer "recipient_id"
-    t.string "content"
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "conversation_id"
     t.string "url"
     t.datetime "seen_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["recipient_id", "sender_id"], name: "index_email_messages_on_recipient_id_and_sender_id"
-    t.index ["recipient_id"], name: "index_email_messages_on_recipient_id"
-    t.index ["sender_id"], name: "index_email_messages_on_sender_id"
+    t.index ["conversation_id"], name: "index_email_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_email_messages_on_user_id"
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -81,6 +80,8 @@ ActiveRecord::Schema.define(version: 20171020050755) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "email_messages", "conversations"
+  add_foreign_key "email_messages", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
 end

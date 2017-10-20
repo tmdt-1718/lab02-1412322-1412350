@@ -42,7 +42,7 @@ $(document).ready(function() {
 
   // Hide toggle buttons on default position
   toggleButtons.css('display', 'none');
-  $('body').css('display', 'table');
+   
 
 
   // Sidebar position
@@ -59,7 +59,7 @@ $(document).ready(function() {
       } else {
           // Hide toggle buttons
           toggleButtons.css('display', 'none');
-          $('body').css('display', 'table');
+           
       }
   });
 
