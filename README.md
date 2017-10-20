@@ -39,8 +39,8 @@ Yêu cầu **không bắt buộc**:
 * [ ] Người dùng có thể gửi tin nhắn cho người dùng ngoài hệ thống. Khi đó, người nhận sẽ nhận được 1 email chứa link đăng ký tài khoản. Sau khi đăng ký tài khoản, họ có thể xem tin nhắn đã nhận. (**MSSV**)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
-* [ ] Chức năng 1
-* [ ] Chức năng 2
+* [ ] Tạo conversation/Chat realtime giữa các user (1412350)
+* [ ] Sắp xếp conversation list theo thứ tự thời gian dựa trên thời gian gửi tin nhắn cuối cùng của mỗi conversation (1412350)
 
 ## Demo
 

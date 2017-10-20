@@ -1,3 +1,9 @@
-<h1> Welcome <%=@user.name%> </h1>
-<%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-<%= link_to 'Your conversations', conversations_path, class: "btn btn-primary" %>
+  <div class="row">
+      <%= render 'layouts/sidebar', user: current_user%>
+    <div class="wrapper">
+      <div class="card">
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+        <%= link_to 'Your conversations', conversations_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
