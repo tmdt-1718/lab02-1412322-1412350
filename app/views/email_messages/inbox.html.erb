@@ -1,17 +1,18 @@
   <div class="row">
       <%= render 'layouts/sidebar', user: current_user%>
     <div class="wrapper">
-      <div class="card">
         <%@inbox_messages.each do |message|%>
           <%if message.seen_at.present?%>
           <div class="row seen">
             <div class="col-lg-3">
               <%=message.get_conversation(message.conversation_id).opposed_user(current_user).name%>
+              </br>
+              <%=message.get_conversation(message.conversation_id).opposed_user(current_user).email%>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-6">
               <%=message.content%>
             </div>
-            <div class="col-lg-2" style="text-align: right">
+            <div class="col-lg-3" style="text-align: right">
               <%= message.get_time(message.created_at)%>
             </div>
           </div>
@@ -19,17 +20,18 @@
           <div class="row unseen" style="font-weight: bold">
             <div class="col-lg-3">
               <%=message.get_conversation(message.conversation_id).opposed_user(current_user).name%>
+              </br>
+              <%=message.get_conversation(message.conversation_id).opposed_user(current_user).email%>              
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-6">
               <%=message.content%>
             </div>
-            <div class="col-lg-2" style="text-align: right">
+            <div class="col-lg-3" style="text-align: right">
               <%= message.get_time(message.created_at)%>
             </div>
           </div>
           <%end%>
           <hr>         
         <%end%>
-      </div><
     </div>
   </div>
