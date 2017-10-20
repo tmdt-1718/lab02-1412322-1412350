@@ -222,6 +222,11 @@ form {
     .content-name {
         color: $primary-color;
     }
+    .content-message {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     .content-email {
 
     }
@@ -230,6 +235,15 @@ form {
         opacity: 0.6;
     }
 }
+
+.unseen {
+    background-color: $border-color;
+    border-radius: 3px;
+    .unread-message {
+        color: $secondary-color;
+    }
+}
+
 // Place all the styles related to the conversations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

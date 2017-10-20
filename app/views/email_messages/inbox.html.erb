@@ -12,7 +12,7 @@
               </br>
               <%=message.get_conversation(message.conversation_id).opposed_user(current_user).email%>
             </div>
-            <div class="col-md-6">
+            <div class="content-message col-md-6">
               <%=message.content%>
             </div>
             <div class="content-time col-md-3">
@@ -26,11 +26,16 @@
               </br>
               <%=message.get_conversation(message.conversation_id).opposed_user(current_user).email%>              
             </div>
-            <div class="col-md-6">
+            <div class="content-message col-md-7">
               <%=message.content%>
             </div>
-            <div class="content-time col-md-3">
-              <%= message.get_time(message.created_at)%>
+            <div class="col-md-2">
+              <div class="content-time">
+                <%= message.get_time(message.created_at)%>
+              </div>
+              <div class="unread-message">
+                unread
+              </div>
             </div>
           </div>
           <%end%>
