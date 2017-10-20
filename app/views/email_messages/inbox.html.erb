@@ -1,7 +1,21 @@
   <div class="row">
       <%= render 'layouts/sidebar', user: current_user%>
     <div class="wrapper">
+      <div class="card-header">
+        <div class="row">
+            <div class="col-lg-3">
+               Sender          
+            </div>
+            <div class="col-lg-6">
+               Email summerize
+            </div>
+            <div class="col-lg-3" style="text-align: right">
+               Send at
+            </div>
+          </div>
+      </div>
         <%@inbox_messages.each do |message|%>
+          <%= link_to user_email_message_path(current_user, message) do %>
           <%if message.seen_at.present?%>
           <div class="row seen">
             <div class="col-lg-3">
@@ -33,5 +47,6 @@
           <%end%>
           <hr>         
         <%end%>
+      <%end%>
     </div>
   </div>

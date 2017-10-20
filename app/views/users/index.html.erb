@@ -1,24 +1,23 @@
 <div class="row">
 <%= render 'layouts/sidebar', user: current_user%>
   <div class="wrapper">
-        <h3 class="card-title">Users List</h3>
-        <ul class="friend-list">
-          <% @users.each do |user| %>
-            <li>
-              <div class="clearfix">
-                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="rounded-circle">
-                    <div class="friend-name">
-                      <strong><%=user.name%></strong>
-                    </div>
-                    <% if current_user.is_unfriend(user, current_user)%>
-                      <%= render 'no_relationship', user: user%>
-                    <%else%>
-                      <%= render 'has_relationship', user: user%>
-                    <%end%>
-                </div>
-            </li>
-            <% end %>
-        </ul>
-    </div>
+    <h3 class="card-title">Users List</h3>
+    <ul class="friend-list">
+      <% @users.each do |user| %>
+        <li>
+          <div class="clearfix">
+            <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="rounded-circle">
+            <div class="friend-name">
+              <strong><%=user.name%></strong>
+            </div>
+            <% if current_user.is_unfriend(user, current_user)%>
+              <%= render 'no_relationship', user: user%>
+            <%else%>
+              <%= render 'has_relationship', user: user%>
+            <%end%>
+          </div>
+        </li>
+        <% end %>
+    </ul>
   </div>
 </div>

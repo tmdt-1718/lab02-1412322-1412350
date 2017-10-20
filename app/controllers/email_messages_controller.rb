@@ -1,4 +1,15 @@
 class EmailMessagesController < ApplicationController
+  def show
+    @message = EmailMessage.find(params[:id])
+    @recipient = User.find(@message.user_id)
+    @sender = Conversation.find(@message.conversation_id).opposed_user(@recipient)
+    if @message.user_id == current_user.id
+      if !@message.seen_at.present?
+        @message.seen_at = Time.now
+        @message.save
+      end
+    end
+  end
   def new
     @email_message = EmailMessage.new
   end

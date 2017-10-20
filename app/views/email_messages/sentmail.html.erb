@@ -1,7 +1,21 @@
   <div class="row">
       <%= render 'layouts/sidebar', user: current_user%>
     <div class="wrapper">
+      <div class="card-header">
+        <div class="row">
+            <div class="col-lg-3">
+               Recipient         
+            </div>
+            <div class="col-lg-6">
+               Email summerize
+            </div>
+            <div class="col-lg-3" style="text-align: right">
+               Send at
+            </div>
+          </div>
+      </div>
         <%@sentmail_messages.each do |message|%>
+          <%= link_to user_email_message_path(current_user, message) do %>
           <div class="row">
             <div class="col-lg-3">
               <%=message.get_conversation(message.conversation_id).opposed_user(current_user).name%>
@@ -15,7 +29,8 @@
               <%= message.get_time(message.created_at)%>
             </div>
           </div>
-          <hr>         
+          <hr>  
+          <%end%>       
         <%end%>
     </div>
   </div>
