@@ -4,6 +4,7 @@
       </div>
         <div class="col-md-9">
     <div class="sidebar-content">
+      <h3>Inbox</h3>
         <%@inbox_messages.each do |message|%>
           <%if message.seen_at.present?%>
           <div class="row seen">
