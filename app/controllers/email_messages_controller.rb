@@ -19,7 +19,7 @@ class EmailMessagesController < ApplicationController
       if user_id.present?
         p Conversation.between(user_id, current_user.id).first
         @conversation = Conversation.between(user_id, current_user.id).first
-        @email_message = EmailMessage.new(user_id: user_id, conversation_id: @conversation.id, content: params[:email_message][:content])
+        @email_message = EmailMessage.new(user_id: user_id, conversation_id: @conversation.id, content: params[:email_message][:content], url: params[:email_message][:url])
         if !@email_message.save
           status = 0        
         end

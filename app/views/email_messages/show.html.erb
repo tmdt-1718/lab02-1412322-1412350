@@ -22,6 +22,7 @@
       	      <%else%>
                 Unseen
               <%end%>
+
             </div>
           </div>
         </div>
@@ -29,6 +30,12 @@
     </div>
     <div class="card-body">
       <%=@message.content%>
+      <hr>
+      Image 
+      <br>
+      <%if @message.url.present?%>
+        <%= image_tag @message.url, class:"img-fluid" %>
+      <%end%>
     </div>
   </div>
 </div>
