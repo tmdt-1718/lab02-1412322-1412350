@@ -4,8 +4,11 @@
     <!-- Sidebar header -->
     <div class="sidebar-header">
 
+        <div class="header-avatar">
+            <%= image_tag asset_url("defaultavatar.png"), class:"img-fluid" %>
+        </div>
         <!-- Sidebar brand image -->
-        <div class="sidebar-name">      
+        <div class="header-name">      
             <%=user.name%>
         </div>
         <div class="header-email">  

@@ -1,16 +1,11 @@
-
 <div class="row">
-<%= render 'layouts/sidebar', user: current_user%>
-<div class="wrapper">
-          <div class="card-header">
-            <div class="d-flex justify-content-between">
-
-              <h3 class="card-title">Create Message</h3>  
-                    
-            </div>
-          </div>
-          <div class="card-body">
-            <%=render 'form', email_message: @email_message, conversations: @conversations%>
-          </div>
-</div>
+  <div class="col-md-3">
+    <%= render 'layouts/sidebar', user: current_user%>
+  </div>
+  <div class="col-md-9">
+    <div class="sidebar-content">
+      <h3>Create Message</h3>
+      <%=render 'form', email_message: @email_message, conversations: @conversations%>
+    </div>
+  </div>
 </div>
