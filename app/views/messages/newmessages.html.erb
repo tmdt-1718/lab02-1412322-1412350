@@ -1,14 +1,13 @@
 <div class="row">
+<%= render 'layouts/sidebar', user: current_user%>
+<div class="row">
   <div class="col-lg-4">
       <div class="card">
-          <div class="card-header bg-primary">
+          <div class="card-header">
             <div class="d-flex justify-content-between">
 
-              <h3 class="card-title">Friend List</h3>  
-                     
-              <div class="d-flex align-items-center">
-                <%= link_to "Conversation List", conversations_path, class: "secondary-button"%>
-              </div>
+              <h3 class="card-title">Friends List</h3>  
+                    
             </div>
           </div>
           <div class="card-body">
@@ -27,11 +26,6 @@
               <% end %> 
             </ul>
           </div>
-          <div class="card-footer">
-            <div class="d-flex align-items-center">
-              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "secondary-button" %>
-            </div>
-          </div>
       </div>
   </div>
   <div class="col-lg-8">
@@ -41,4 +35,5 @@
         <% end %>
       </ul>
   </div> 
+</div>
 </div>

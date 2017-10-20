@@ -30,10 +30,16 @@
             <% end %>
         </li>
         <li>
-            <a href="#">
+            <%= link_to users_path do %>  
                 <i class="fa-fw fa fa-users"></i>
+                Users List
+            <% end %>
+        </li> 
+        <li>
+            <%= link_to new_messages_path do %>
+                <i class="fa-fw fa fa-heart"></i>
                 Friends List
-            </a>
+            <% end %>
         </li>
         <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
