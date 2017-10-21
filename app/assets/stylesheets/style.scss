@@ -309,6 +309,55 @@ form {
     }
 }
 
+.message-detail {
+    padding: 15px;
+    font-size: 14px;
+    width: 100%;
+    .message-header {
+        .message-sender {
+            .message-sender-avatar {
+                img {
+
+                }
+            }
+            span {
+                color: $text-color2;
+                opacity: 0.6;
+            }
+
+        }
+        .message-receiver {
+            span {
+                color: $text-color2;
+                opacity: 0.6;
+            }
+        }
+        .message-status {
+            .seen {
+                background-color: transparent;
+                color: $primary-color;
+            }
+            .unseen {
+                background-color: transparent;
+                color: $secondary-color;
+            }
+        }
+    }
+    .message-body {
+        overflow: hidden;
+        .message-content {
+            word-break:	break-all;
+            border-bottom: 1px solid $border-color;
+            border-top: 1px solid $border-color;
+            margin: 10px 0;
+        }
+        .message-attached-file {
+            width: 200px;
+            height: 100%;
+        }
+    }
+}
+
 .footer {
     color: $text-color1;
     font-size: 10px;
