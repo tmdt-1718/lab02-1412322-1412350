@@ -1,52 +1,60 @@
   <div class="row">
+  <div class="col-md-3">
       <%= render 'layouts/sidebar', user: current_user%>
-    <div class="wrapper">
-      <div class="card-header">
-        <div class="row">
+      </div>
+        <div class="col-md-9">
+    <div class="sidebar-content">
+      <h3>Inbox</h3>
+          <div class="row">
             <div class="col-lg-3">
                Sender          
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                Email summerize
             </div>
-            <div class="col-lg-3" style="text-align: right">
+            <div class="col-lg-2">
                Send at
             </div>
           </div>
-      </div>
         <%@inbox_messages.each do |message|%>
           <%= link_to user_email_message_path(current_user, message) do %>
           <%if message.seen_at.present?%>
           <div class="row seen">
-            <div class="col-lg-3">
+            <div class="content-name col-md-3">
               <%=message.get_conversation(message.conversation_id).opposed_user(current_user).name%>
               </br>
               <%=message.get_conversation(message.conversation_id).opposed_user(current_user).email%>
             </div>
-            <div class="col-lg-6">
+            <div class="content-message col-md-6">
               <%=message.content%>
             </div>
-            <div class="col-lg-3" style="text-align: right">
+            <div class="content-time col-md-3">
               <%= message.get_time(message.created_at)%>
             </div>
           </div>
           <%else%>
-          <div class="row unseen" style="font-weight: bold">
-            <div class="col-lg-3">
+          <div class="row unseen">
+            <div class="content-name col-md-3">
               <%=message.get_conversation(message.conversation_id).opposed_user(current_user).name%>
               </br>
               <%=message.get_conversation(message.conversation_id).opposed_user(current_user).email%>              
             </div>
-            <div class="col-lg-6">
+            <div class="content-message col-md-7">
               <%=message.content%>
             </div>
-            <div class="col-lg-3" style="text-align: right">
-              <%= message.get_time(message.created_at)%>
+            <div class="col-md-2">
+              <div class="content-time">
+                <%= message.get_time(message.created_at)%>
+              </div>
+              <div class="unread-message">
+                unread
+              </div>
             </div>
           </div>
           <%end%>
           <hr>         
         <%end%>
       <%end%>
+    </div>
     </div>
   </div>
