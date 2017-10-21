@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#home'
+  root 'email_messages#inbox'
   get '/new_messages', to: 'messages#newmessages'
   get '/inboxs', to: 'email_messages#inbox'
   get '/sentmails', to: 'email_messages#sentmail'  
