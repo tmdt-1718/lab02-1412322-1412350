@@ -1,12 +1,13 @@
-<li class="mar-btm">
-    <div class="<%= user.id == message.user_id ? 'media-right' : 'media-left' %>">
+<li class="message-block">
+    <div class="<%= user.id == message.user_id ? 'message-wrapper-right d-flex align-items-end flex-column' : 'message-wrapper-left' %>">
+        <a href="#" class="name">
+        <%= user.id == message.user_id ? user.name : conversation.opposed_user(user).name %>
+        </a>
+        <p><%= message.content %></p>
+        <span class="time"><i class="fa fa-clock-o fa-fw"></i><%= conversation.get_time(message.created_at) %></span>
+    </div>
+    <div class="<%= user.id == message.user_id ? 'message-avatar-right d-flex justify-content-end' : 'message-avatar-left' %>">
         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle img-sm"
         alt="Profile Picture">
-    </div>
-    <div class="<%= user.id == message.user_id ? 'media-body pad-hor speech-right' : 'media-body pad-hor' %>">
-        <div class="speech">	<a href="#" class="media-heading"><%= user.id == message.user_id ? user.name : conversation.opposed_user(user).name %></a>
-            <p><%= message.content %></p>
-            <p class="speech-time">	<i class="fa fa-clock-o fa-fw"></i><%= conversation.get_time(message.created_at) %></p>
-        </div>
     </div>
 </li>
