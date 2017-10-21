@@ -1,0 +1,15 @@
+<h1>Hi,
+  <%= @user.name %>
+</h1>
+
+<p>
+  Your friend <%=@sender.name%>(<%=@sender.email%>) 
+  has just send a email message to you!
+</p>
+
+<p>
+  To see details of <%= @sender.name %>'s email message, just follow this link:
+  <%= link_to 'link', user_email_message_url(@user, @message) %>.
+</p>
+
+<p>Have a great day!</p>
