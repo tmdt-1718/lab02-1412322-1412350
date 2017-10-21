@@ -1,20 +1,17 @@
 class EmailMessagesController < ApplicationController
   def show
     @message = EmailMessage.find(params[:id])    
-    @user = User.find(params[:user_id])
-    if @user.present?
-      if @user == current_user
-        @recipient = User.find(@message.user_id)
-        @sender = Conversation.find(@message.conversation_id).opposed_user(@recipient)
-        if @message.user_id == current_user.id
-          if !@message.seen_at.present?
-            @message.seen_at = Time.now
-            @message.save
-          end
+    @recipient = User.find(@message.user_id)
+    @sender = Conversation.find(@message.conversation_id).opposed_user(@recipient)
+    if (@recipient == current_user) or (@sender == current_user)
+      if @message.user_id == current_user.id
+        if !@message.seen_at.present?
+          @message.seen_at = Time.now
+          @message.save
         end
-      else
-        redirect_to inboxs_path, alert: "You don't have permission to see detail messages of others users!"      
       end
+    else
+      redirect_to inboxs_path, alert: "You don't have permission to see etail messages of others users!"      
     end
   end
   def new
