@@ -1,41 +1,57 @@
 <div class="row">
-  <%= render 'layouts/sidebar', user: current_user%>
-  <div class="wrapper">
-    <div class="card-header">
-      <div class="clearfix">
-        <div class="row">
-          <div class="col-lg-3">
-      	    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="rounded-circle">
-      	  </div>
-          <div class="col-lg-9">
-            <div class="friend-name">	
-      		    <strong><%=@sender.name%></strong>(<%=@sender.email%>)
-              <br>
-              <%if @recipient.email == current_user.email%>
-                To me(<%=@recipient.email%>)
-              <%else%>
-                To <%@recipient.name%>(<%= @recipient.email%>)
-              <%end%>
-              </br>
-              <%if @message.seen_at.present?%>
-                Seen at: <%=@message.get_time(@message.seen_at)%>
-      	      <%else%>
-                Unseen
-              <%end%>
+  <div class="col-md-3">
+    <%= render 'layouts/sidebar', user: current_user%>
+  </div>
+  <div class="col-md-9">
+    <div class="sidebar-content">
+      <h3>Message Detail</h3>
+      <div class="row">
+        <div class="message-detail">
+          <div class="message-header row">
 
+            <div class="message-sender-avatar col-md-2 text-center">
+              <%= image_tag asset_url("defaultavatar.png"), class:"img-fluid" %>
+            </div>
+
+            <div class="col-md-10">
+              <div class="message-sender">
+              <%=@sender.name%>
+              <span>< <%=@sender.email%> ></span>
+              </div>
+
+              <div class="message-receiver">
+                <%if @recipient.email == current_user.email%>
+                  To me(<%=@recipient.email%>)
+                <%else%>
+                  To <%@recipient.name%> <span>< <%= @recipient.email%> ></span>
+                <%end%>
+              </div>
+
+              <div class="message-status">
+                Status: 
+                <%if @message.seen_at.present?%>
+                  <span class="seen">Seen</span> at: <%=@message.get_time(@message.seen_at)%>
+                <%else%>
+                  <span class="unseen">Unseen</span>
+                <%end%>
+              </div>
             </div>
           </div>
+
+          <div class="message-body">
+            <div class="message-content">
+              <%=@message.content%>
+            </div>
+            <div class="message-attached-file">
+              Attached Image 
+              <%if @message.url.present?%>
+                <%= image_tag @message.url, class:"img-fluid" %>
+              <%end%>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-    <div class="card-body">
-      <%=@message.content%>
-      <hr>
-      Image 
-      <br>
-      <%if @message.url.present?%>
-        <%= image_tag @message.url, class:"img-fluid" %>
-      <%end%>
     </div>
   </div>
 </div>
