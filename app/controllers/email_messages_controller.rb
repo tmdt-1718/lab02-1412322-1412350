@@ -8,6 +8,7 @@ class EmailMessagesController < ApplicationController
         if !@message.seen_at.present?
           @message.seen_at = Time.now
           @message.save
+          ApplicationMailer.seen_email(@sender, @recipient, @message).deliver_later                  
         end
       end
     else
@@ -50,12 +51,16 @@ class EmailMessagesController < ApplicationController
                 p  User.find(user_id).email              
               else
                 if !@email_message.save
-                  status = 0        
+                  status = 0   
+                else
+                  ApplicationMailer.recv_email(User.find(user_id), current_user, @email_message).deliver_later                  
                 end
               end
             else
               if !@email_message.save
                 status = 0        
+              else
+                ApplicationMailer.recv_email(User.find(user_id), current_user, @email_message).deliver_later                  
               end
             end
           end
