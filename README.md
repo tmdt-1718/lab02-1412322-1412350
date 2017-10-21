@@ -24,7 +24,7 @@ Yêu cầu **bắt buộc**
 * [X] Nhấn nút "tạo tin nhắn" sẽ chuyển sang giao diện cho phép người dùng gửi tin nhắn cho người dùng trong danh sách bạn bè. Người gửi phải nằm trong danh sách bạn bè và cho phép người dùng chọn qua dropdown. (**1412350**)
 * [X] Nhấn "xem tin đã gửi" sẽ chuyển sang giao diện hiển thị danh sách tin nhắn đã gửi. Mỗi tin nhắn cần hiện thời gian người nhận đã đọc. (**1412350**)
 * [X] Mỗi người dùng chỉ có thể đọc tin nhắn 1 lần duy nhất. (**1412350**)
-* [ ] Người dùng chỉ có thể đọc tin nhắn khi họ nằm trong danh sách người nhận. (**MSSV**)
+* [X] Người dùng chỉ có thể đọc tin nhắn khi họ nằm trong danh sách người nhận. (**1412350**)
 
 Yêu cầu **không bắt buộc**:
 * [X] Người dùng có thể gửi hình ảnh đính kèm theo thông điệp. (**1412350**)
@@ -39,8 +39,8 @@ Yêu cầu **không bắt buộc**:
 * [ ] Người dùng có thể gửi tin nhắn cho người dùng ngoài hệ thống. Khi đó, người nhận sẽ nhận được 1 email chứa link đăng ký tài khoản. Sau khi đăng ký tài khoản, họ có thể xem tin nhắn đã nhận. (**MSSV**)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
-* [X] Tạo conversation/Chat realtime giữa các user (1412350)
-* [X] Sắp xếp conversation list theo thứ tự thời gian dựa trên thời gian gửi tin nhắn cuối cùng của mỗi conversation (1412350)
+* [X] Tạo conversation/Chat realtime giữa các user (**1412350**)
+* [X] Sắp xếp conversation list theo thứ tự thời gian dựa trên thời gian gửi tin nhắn cuối cùng của mỗi conversation (**1412350**)
 
 ## Demo
 
