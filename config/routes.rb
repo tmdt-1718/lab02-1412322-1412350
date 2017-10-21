@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index] do
     resources :relationships, only: [:create, :update, :destroy]
-    resources :email_messages, only: [:create, :new]
+    resources :email_messages, only: [:create, :new, :show]
   end
 end

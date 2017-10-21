@@ -3,6 +3,7 @@ class EmailMessage < ApplicationRecord
   belongs_to :user
   belongs_to :conversation
   validates :content, presence: true
+  mount_uploader :url
   default_scope {order("created_at DESC")}
   def email
     user.try(:email)

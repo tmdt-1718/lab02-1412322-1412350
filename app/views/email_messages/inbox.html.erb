@@ -5,7 +5,19 @@
         <div class="col-md-9">
     <div class="sidebar-content">
       <h3>Inbox</h3>
+          <div class="row">
+            <div class="col-lg-3">
+               Sender          
+            </div>
+            <div class="col-lg-7">
+               Email summerize
+            </div>
+            <div class="col-lg-2">
+               Send at
+            </div>
+          </div>
         <%@inbox_messages.each do |message|%>
+          <%= link_to user_email_message_path(current_user, message) do %>
           <%if message.seen_at.present?%>
           <div class="row seen">
             <div class="content-name col-md-3">
@@ -42,6 +54,7 @@
           <%end%>
           <hr>         
         <%end%>
+      <%end%>
     </div>
     </div>
   </div>

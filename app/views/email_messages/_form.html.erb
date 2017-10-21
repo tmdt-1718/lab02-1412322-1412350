@@ -1,7 +1,7 @@
 <%= form_for @email_message, url: user_email_messages_path(current_user), html: {class: "content-form"}, method: :post do |f| %>
   <div class="field">
-  <%= f.label :user_id %><br />
-    <%= f.collection_select :user_id, User.all.where.not(id: current_user).order(:email), :id, :email,{:prompt => "Select friends to send messages"},{:multiple => true}%>
+    <%= f.label :user_id %><br />
+    <%= f.collection_select :user_id, @users.order(:email), :id, :email,{:prompt => "Select friends to send messages"},{:multiple => true}%>
   </div>
   <div class="field">
     <%= f.label :content %><br />
