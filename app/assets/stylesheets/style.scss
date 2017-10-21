@@ -354,6 +354,9 @@ form {
             border-bottom: 1px solid $border-color;
             border-top: 1px solid $border-color;
             margin: 10px 0;
+            height: 200px;
+            overflow-y: scroll;
+
         }
         .message-attached-file {
             width: 200px;
