@@ -36,7 +36,7 @@ class EmailMessagesController < ApplicationController
     @user_emails = Array.new
     params[:email_message][:user_id].each do |user_id|
       if user_id.present?
-        @conversation = Conversation.between(user_id, current_user.id).first
+        @conversation = Conversation.get(user_id, current_user.id)
         @relationships = Relationship.between(user_id, current_user)
         @email_message = EmailMessage.new(user_id: user_id, conversation_id: @conversation.id, content: params[:email_message][:content], url: params[:email_message][:url])
         if @relationships.count == 2
