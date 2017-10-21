@@ -37,3 +37,7 @@
   });
 })();
 
+$(document).on('turbolinks:load', function(){
+  $('#email_message_user_id').chosen();  
+})
+
