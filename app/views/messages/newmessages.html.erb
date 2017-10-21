@@ -1,32 +1,29 @@
 <div class="row">
-<%= render 'layouts/sidebar', user: current_user%>
-      <div class="card">
-          <div class="card-header">
-            <div class="d-flex justify-content-between">
-              <h3 class="card-title">Friends List</h3>  
-            </div>
-          </div>
-          <div class="card-body">
-            <ul class="friend-list">
-              <% @users.each do |user| %>
-                <li class="toggle-window">
-                  <%= link_to conversations_path(user_id: user), remote: true, method: :post do %>
-                	<div class="clearfix">
-                		<img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="rounded-circle">
-                		<div class="friend-name">	
-                			<strong><%=user.name%></strong>
-                		</div>
-                	</div>
-                  <%end%>
-                </li>
-              <% end %> 
-            </ul>
-          </div>
+  <div class="col-md-3">
+    <%= render 'layouts/sidebar', user: current_user%>
+  </div>
+  <div class="col-md-9">
+    <div class="sidebar-content">
+      <h3><i class="fa-fw fa fa-heart"></i> Friends List</h3>
+      <div class="row">
+        <div class="friend-list col-md-4">
+          <% @users.each do |user| %>
+              <div class="friend-block toggle-window">
+              <%= link_to conversations_path(user_id: user), remote: true, method: :post do %>
+                <div class="friend-info">
+                  <%= image_tag asset_url("defaultavatar.png"), class:"img-fluid" %>
+                  <%=user.name%>
+                </div>
+              <%end%>
+              </div>
+          <% end %>
+        </div>
+        <ul id="conversations-list col-md-8">
+          <% @conversations.each do |conversation| %>
+            <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+          <% end %>
+        </ul>
       </div>
-
-      <ul id="conversations-list">
-        <% @conversations.each do |conversation| %>
-          <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
-        <% end %>
-      </ul>
+    </div>
+  </div>
 </div>

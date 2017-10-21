@@ -231,6 +231,9 @@ form {
     background-color: $background-color2;
     width: 100%;
     height: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
     padding: 10px;
     font-size: 14px;
     a {
@@ -305,6 +308,378 @@ form {
     .friend-action {
         a {
             color: $text-color1;
+        }
+    }
+}
+
+.message-detail {
+    padding: 15px;
+    font-size: 14px;
+    width: 100%;
+    .message-header {
+        .message-sender {
+            .message-sender-avatar {
+                img {
+
+                }
+            }
+            span {
+                color: $text-color2;
+                opacity: 0.6;
+            }
+
+        }
+        .message-receiver {
+            span {
+                color: $text-color2;
+                opacity: 0.6;
+            }
+        }
+        .message-status {
+            .seen {
+                background-color: transparent;
+                color: $primary-color;
+            }
+            .unseen {
+                background-color: transparent;
+                color: $secondary-color;
+            }
+        }
+    }
+    .message-body {
+        overflow: hidden;
+        overflow-y: scroll;
+        .message-content {
+            word-break:	break-all;
+            border-bottom: 1px solid $border-color;
+            border-top: 1px solid $border-color;
+            margin: 10px 0;
+        }
+        .message-attached-file {
+            width: 200px;
+            height: 100%;
+        }
+    }
+}
+
+.footer {
+    color: $text-color1;
+    font-size: 10px;
+    margin: 10px 0;
+    text-align: right;
+}@import url('https://fonts.googleapis.com/css?family=Nunito');
+$background-color1: #2E2E2E;
+$background-color2: #FFF;
+$border-color: #E5E5E5;
+$primary-color: #2AB1E0;
+$primary-hover-color: #63C1E0;
+$secondary-color: #D62222;
+$secondary-hover-color: #D83636;
+$text-color1: #FFF;
+$text-color2: #000;
+$success-color: #26FF67;
+$danger-color: #FF3838;
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: $background-color1 !important;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+}
+
+.middle-form {
+    border-radius: 5px;
+    margin: 50px auto;
+    background-color: $background-color2;
+    min-width: 300px;
+    max-width: 380px;
+    width: 50%;
+    padding: 14px;
+    .logo-icon {
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+    .field {
+        margin: 10px 0;
+        label {
+            display: inline-block;
+        }
+    }
+    .rememberme-field {
+        font-size: 13px;
+    }
+    h2 {
+        color: $primary-color;
+    }
+}
+
+form {
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+        width: 100%;
+        height: 40px;
+        padding: 0 10px;
+        border: 1px solid $border-color;
+        border-radius: 0px;
+        font-size: 14px;
+        &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px white inset !important;
+            border: 1px solid $border-color !important;
+        }
+    }
+    label {
+        opacity: 0.6;
+    }
+}
+
+.shared-link {
+    a {
+        text-decoration: none !important;
+        font-size: 13px;
+        color: $primary-color;
+        &:hover {
+            color: $primary-hover-color;
+        }
+    }
+}
+
+@mixin button($color, $hover-color) {
+    background-color: $color;
+    color: $text-color1;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    color: $text-color1;
+    transition: 0.5s ease-in;
+    &:hover {
+        background-color: $hover-color;
+        color: $text-color1;
+    }
+}
+
+.primary-button {
+    @include button($primary-color, $primary-hover-color);
+    width: 100%;
+    margin: 10px 0;
+}
+
+.secondary-button {
+    @include button($secondary-color, $secondary-hover-color);
+    text-decoration: none !important;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 0;
+}
+
+.tertiary-button {
+    @include button($primary-color, $primary-hover-color);
+    text-decoration: none !important;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 0;
+}
+
+.alert {
+    width: 100%;
+    margin: 10px 0;
+    color: $text-color1 !important;
+    font-size: 14px;
+    padding: 10px;
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: $success-color !important;
+}
+
+.alert-danger {
+    background-color: $danger-color !important;
+}
+
+.container {
+    border-radius: 3px;
+    padding: 10px;
+    margin: auto;
+    height: 100%;
+    h3 {
+        font-size: 20px;
+        color: $text-color1;
+        background-color: $primary-color;
+        border-radius: 3px;
+        padding: 10px;
+        margin: 0 0 20px 0;
+    }
+}
+
+.sidebar {
+    border-radius: 3px;
+    height: 100%;
+    height: 500px;
+    background-color: $background-color2;
+    font-size: 14px;
+    .sidebar-header {
+        border-radius: 3px;
+        position: relative;
+        height: 200px;
+        background-color: $primary-color;
+        text-align: center;
+        color: $text-color1;
+        padding: 50px 0;
+        .header-avatar {
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+        }
+        .header-name {
+            font-size: 20px;
+        }
+        .header-email {
+            background-color: $primary-hover-color;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    .sidebar-body {
+        button {
+            margin: 0 auto;
+            background-color: $secondary-color;
+            color: $text-color1;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+            height: 40px;
+            padding: 0 20px;
+            margin: 10px 0;
+            color: $text-color1;
+            text-align: center;
+            &:hover {
+                background-color: $secondary-hover-color;
+            }
+        }
+        ul {
+            li {
+                display: block;
+                padding: 10px;
+                margin: 0 20px 0 -20px;
+                transition: 0.1s ease-in;
+                a {
+                    text-decoration: none !important;
+                    display: block;
+                    color: $text-color2;
+                }
+                &:hover {
+                    border-radius: 3px;
+                    background-color: $border-color;
+
+                }
+            }
+        }
+    }
+}
+
+.sidebar-content {
+    border-radius: 3px;
+    background-color: $background-color2;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 14px;
+    a {
+        text-decoration: none !important;
+        color: $text-color2;
+        &:hover {
+            color: $text-color2;
+        }
+    }
+    .content-name {
+        color: $primary-color;
+    }
+    .content-email {
+        color: $text-color2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .content-message {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .content-time {
+        color: $text-color2;
+        opacity: 0.6;
+        text-align: right;
+    }
+}
+
+.content-form {
+    width: 100%;
+    select {
+        width: 100%;
+    }
+    label {
+        color: $text-color2;
+        font-size: 14px;
+        margin: 10px 0 0 0;
+    }
+    textarea {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+.unseen {
+    background-color: $border-color;
+    border-radius: 3px;
+    padding: 10px 0;
+    .unread-message {
+        color: $secondary-color;
+        text-align: right;
+    }
+}
+
+.friend-list {
+    padding: 10px;
+    .friend-block {
+
+        margin-bottom: 10px;
+        .friend-info {
+            img {
+                border-radius: 3px;
+                width: 30px;
+                height: 30px;
+                margin: 10px;
+            }
+            color: $primary-color;
+            font-size: 14px;
+            .last-message {
+                color: $border-color;
+                font-size: 14px;
+            }
+        }
+        .friend-action {
+            a {
+                color: $text-color1;
+            }
         }
     }
 }
