@@ -28,19 +28,19 @@ class User < ApplicationRecord
     conversation = Conversation.includes(:messages).between(user_id1, user_id2).first
     if conversation.present?
       if conversation.messages.count >= 1
-        if conversation.messages.last.user_id == user_id2
-          return "You: " + conversation.messages.last.content
+        if conversation.messages.first.user_id == user_id2
+          return "You: " + conversation.messages.first.content
         else
-          return conversation.messages.last.content 
+          return conversation.messages.first.content 
         end
       else return 'Has no message yet'
       end
     else
       if conversation.messages.count >= 1
-        if conversation.messages.last.user_id == user_id2
-          return "You: " + conversation.messages.last.content
+        if conversation.messages.first.user_id == user_id2
+          return "You: " + conversation.messages.first.content
         else
-          return conversation.messages.last.content 
+          return conversation.messages.first.content 
         end 
       else return 'Has no message yet'
       end

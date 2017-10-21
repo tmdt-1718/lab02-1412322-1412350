@@ -4,12 +4,12 @@
   </div>
   <div class="col-md-9">
     <div class="sidebar-content">
-      <h3><i class="fa-fw fa fa-heart"></i> Friends List</h3>
+      <h3><i class="fa-fw fa fa-heart"></i> Conversations List</h3>
       <div class="friend-list row">
         <% if @conversations.count == 0 %>
           Have no conversation yet!
         <%else%>
-        <div class="col-md-4">
+        <div class="col-md-4" id="conversations">
           <% @conversations.each do |conversation| %>
             
               <% if conversation.messages.count > 0%>

@@ -6,7 +6,7 @@ Thành viên:
 * [X] **1412322** Luong Nhat Minh (1412322)
 * [X] **1412350** Nguyen Thi Bao Ngoc (1412350)
 
-URL: **URL hosting của bài tập**
+URL: https://thegearsmessages.herokuapp.com/
 
 ## Yêu cầu
 
@@ -16,14 +16,14 @@ Yêu cầu **GIT**:
 * [X] Sử dụng GIT theo [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
 
 Yêu cầu **bắt buộc**
-* [X] Đăng ký tài khoản bằng email, password, và tên.  (**1412322**)
-* [X] Đăng nhập bằng email và password. (**1412322**)
+* [X] Đăng ký tài khoản bằng email, password, và tên.  (**1412350**)
+* [X] Đăng nhập bằng email và password. (**1412350**)
 * [X] Sau khi đăng nhập, người dùng sẽ được chuyển đến trang liệt kê danh sách các tin nhắn đã nhận, sắp xếp theo thứ tự thời gian, một nút để tạo tin nhắn mới, nút để xem danh sách bạn bè và nút để xem các tin nhắn đã gửi. (**1412322/1412350**)
 * [X] Tin nhắn chưa đọc phải được làm nổi bật hơn các tin nhắn khác. (**1412322**)
-* [X] Nhấn vào nút "xem danh sách bạn" sẽ chuyển người dùng đến trang liệt kê danh sách người dùng cùng với các chức năng thêm bạn. (**1412322/1412350**)
-* [X] Nhấn nút "tạo tin nhắn" sẽ chuyển sang giao diện cho phép người dùng gửi tin nhắn cho người dùng trong danh sách bạn bè. Người gửi phải nằm trong danh sách bạn bè và cho phép người dùng chọn qua dropdown. (**1412350**)
+* [X] Nhấn vào nút "xem danh sách bạn" sẽ chuyển người dùng đến trang liệt kê danh sách người dùng cùng với các chức năng thêm bạn. (**1412322**)
+* [X] Nhấn nút "tạo tin nhắn" sẽ chuyển sang giao diện cho phép người dùng gửi tin nhắn cho người dùng trong danh sách bạn bè. Người gửi phải nằm trong danh sách bạn bè và cho phép người dùng chọn qua dropdown. (**1412322/1412350**)
 * [X] Nhấn "xem tin đã gửi" sẽ chuyển sang giao diện hiển thị danh sách tin nhắn đã gửi. Mỗi tin nhắn cần hiện thời gian người nhận đã đọc. (**1412350**)
-* [X] Mỗi người dùng chỉ có thể đọc tin nhắn 1 lần duy nhất. (**1412350**)
+* [X] Mỗi người dùng chỉ có thể đọc tin nhắn 1 lần duy nhất. (**1412322**)
 * [X] Người dùng chỉ có thể đọc tin nhắn khi họ nằm trong danh sách người nhận. (**1412350**)
 
 Yêu cầu **không bắt buộc**:
@@ -46,7 +46,7 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 
 Link ảnh GIF demo ứng dụng:
 
-![Video Walkthrough](demo.gif)
+[Video Walkthrough](https://i.imgur.com/bV1FXR0.gif)
 
 Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
