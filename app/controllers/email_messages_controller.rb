@@ -8,6 +8,7 @@ class EmailMessagesController < ApplicationController
         if !@message.seen_at.present?
           @message.seen_at = Time.now
           @message.save
+          ApplicationMailer.seen_email(@sender, @recipient, @message).deliver_later                  
         end
       end
     else
@@ -50,12 +51,16 @@ class EmailMessagesController < ApplicationController
                 p  User.find(user_id).email              
               else
                 if !@email_message.save
-                  status = 0        
+                  status = 0   
+                else
+                  ApplicationMailer.recv_email(User.find(user_id), current_user, @email_message).deliver_later                  
                 end
               end
             else
               if !@email_message.save
                 status = 0        
+              else
+                ApplicationMailer.recv_email(User.find(user_id), current_user, @email_message).deliver_later                  
               end
             end
           end
@@ -66,11 +71,13 @@ class EmailMessagesController < ApplicationController
       render :new, alert: @email_message.errors.full_messages[0]
     else
       if params[:email_message][:user_id].count <= 1
+        p "you dont have ..."
         redirect_to new_user_email_message_path(current_user), alert: "You have to choose at least 1 friend to send message!"
       else
         if @user_emails.count == 0
           redirect_to root_path, notice: "Send messages successfully!"
         else  
+          p "you was blocked"
           redirect_to new_user_email_message_path(current_user), alert: @user_emails.join("\n")
         end
       end        

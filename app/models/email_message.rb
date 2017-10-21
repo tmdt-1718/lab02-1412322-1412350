@@ -13,12 +13,12 @@ class EmailMessage < ApplicationRecord
     self.user = User.find_by(email: email).first if email.present?
   end
   def get_time(time)
-    date = time.localtime.strftime('%T')
-    today_tmp = Time.now().strftime('%F')
-    if today_tmp == time.localtime.strftime('%F')
+    date = time.in_time_zone('Bangkok').strftime('%T')
+    today_tmp = Time.now().in_time_zone('Bangkok').strftime('%F')
+    if today_tmp == time.in_time_zone('Bangkok').strftime('%F')
       return date
     else
-      return time.localtime.strftime('%F %T')
+      return time.in_time_zone('Bangkok').strftime('%F %T')
     end
   end
   def get_user(id)

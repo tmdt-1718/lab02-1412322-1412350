@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-9">
     <div class="sidebar-content">
-      <h3>Message Detail</h3>
+      <h3><i class="fa-fw fa fa-file"></i> Message Detail</h3>
       <div class="row">
         <div class="message-detail">
           <div class="message-header row">
@@ -39,7 +39,7 @@
 
           <div class="message-body">
             <div class="message-content">
-              <%=@message.content%>
+              <%=simple_format h @message.content%>
             </div>
             <div class="message-attached-file">
               Attached Image 

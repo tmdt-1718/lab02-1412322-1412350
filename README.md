@@ -34,8 +34,8 @@ Yêu cầu **không bắt buộc**:
 * [X] Người dùng có thể xóa người dùng khác ra khỏi danh sách bạn. (**1412350***)
 * [X] Người dùng có thể unblock người dùng khác. (**1412350**)
 * [ ] Khi người dùng kéo xuống cuối trang, các tin nhắn tiếp theo sẽ tự động hiển thị hoặc có nút nhấn "Xem thêm tin nhắn" để nạp thêm danh sách tin nhắn. (**MSSV**)
-* [ ] Người dùng sẽ nhận được email thông báo khi họ nhận được tin nhắn cùng với link để xem tin nhắn. (**MSSV**)
-* [ ] Người dùng sẽ nhận được email khi người nhận đã đọc tin nhắn. (**MSSV**)
+* [X] Người dùng sẽ nhận được email thông báo khi họ nhận được tin nhắn cùng với link để xem tin nhắn. (**1412322**)
+* [x] Người dùng sẽ nhận được email khi người nhận đã đọc tin nhắn. (**1412322**)
 * [ ] Người dùng có thể gửi tin nhắn cho người dùng ngoài hệ thống. Khi đó, người nhận sẽ nhận được 1 email chứa link đăng ký tài khoản. Sau khi đăng ký tài khoản, họ có thể xem tin nhắn đã nhận. (**MSSV**)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:

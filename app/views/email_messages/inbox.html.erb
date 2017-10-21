@@ -5,6 +5,9 @@
         <div class="col-md-9">
     <div class="sidebar-content">
       <h3><i class="fa-fw fa fa-inbox"></i> Inbox</h3>
+        <% if alert %>
+        <p class="alert alert-danger"><i class="fa-fw fa fa-warning"></i><%= alert %></p>
+      <%end%>
         <%@inbox_messages.each do |message|%>
           <%= link_to user_email_message_path(current_user, message) do %>
           <%if message.seen_at.present?%>
@@ -49,9 +52,6 @@
           <%end%>
           <hr>         
         <%end%>
-      <%end%>
-      <% if alert %>
-        <p class="alert alert-danger"><i class="fa-fw fa fa-warning"></i><%= alert %></p>
       <%end%>
     </div>
     </div>

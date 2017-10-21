@@ -86,7 +86,8 @@ form {
     }
 }
 
-@mixin button($color, $hover-color) {
+@mixin button($color,
+$hover-color) {
     background-color: $color;
     color: $text-color1;
     border: none;
@@ -103,13 +104,15 @@ form {
 }
 
 .primary-button {
-    @include button($primary-color, $primary-hover-color);
+    @include button($primary-color,
+    $primary-hover-color);
     width: 100%;
     margin: 10px 0;
 }
 
 .secondary-button {
-    @include button($secondary-color, $secondary-hover-color);
+    @include button($secondary-color,
+    $secondary-hover-color);
     text-decoration: none !important;
     padding: 10px;
     border-radius: 3px;
@@ -117,7 +120,8 @@ form {
 }
 
 .tertiary-button {
-    @include button($primary-color, $primary-hover-color);
+    @include button($primary-color,
+    $primary-hover-color);
     text-decoration: none !important;
     padding: 10px;
     border-radius: 3px;
@@ -219,7 +223,6 @@ form {
                 &:hover {
                     border-radius: 3px;
                     background-color: $border-color;
-
                 }
             }
         }
@@ -291,15 +294,13 @@ form {
 }
 
 .friend-list {
-    border-bottom: 1px solid $border-color;
-    
     padding: 10px;
     margin: 0 0 20px 0;
     .friend-info {
         img {
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            border-radius: 3px;
+            width: 30px;
+            height: 30px;
             margin: 0 10px;
         }
         color: $primary-color;
@@ -319,15 +320,12 @@ form {
     .message-header {
         .message-sender {
             .message-sender-avatar {
-                img {
-
-                }
+                img {}
             }
             span {
                 color: $text-color2;
                 opacity: 0.6;
             }
-
         }
         .message-receiver {
             span {
@@ -350,10 +348,12 @@ form {
         overflow: hidden;
         overflow-y: scroll;
         .message-content {
-            word-break:	break-all;
+            word-break: break-all;
             border-bottom: 1px solid $border-color;
             border-top: 1px solid $border-color;
             margin: 10px 0;
+            height: 200px;
+            overflow-y: scroll;
         }
         .message-attached-file {
             width: 200px;
@@ -367,7 +367,9 @@ form {
     font-size: 10px;
     margin: 10px 0;
     text-align: right;
-}@import url('https://fonts.googleapis.com/css?family=Nunito');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 $background-color1: #2E2E2E;
 $background-color2: #FFF;
 $border-color: #E5E5E5;
@@ -455,7 +457,8 @@ form {
     }
 }
 
-@mixin button($color, $hover-color) {
+@mixin button($color,
+$hover-color) {
     background-color: $color;
     color: $text-color1;
     border: none;
@@ -472,13 +475,15 @@ form {
 }
 
 .primary-button {
-    @include button($primary-color, $primary-hover-color);
+    @include button($primary-color,
+    $primary-hover-color);
     width: 100%;
     margin: 10px 0;
 }
 
 .secondary-button {
-    @include button($secondary-color, $secondary-hover-color);
+    @include button($secondary-color,
+    $secondary-hover-color);
     text-decoration: none !important;
     padding: 10px;
     border-radius: 3px;
@@ -486,7 +491,8 @@ form {
 }
 
 .tertiary-button {
-    @include button($primary-color, $primary-hover-color);
+    @include button($primary-color,
+    $primary-hover-color);
     text-decoration: none !important;
     padding: 10px;
     border-radius: 3px;
@@ -589,7 +595,6 @@ form {
                 &:hover {
                     border-radius: 3px;
                     background-color: $border-color;
-
                 }
             }
         }
@@ -660,7 +665,6 @@ form {
 .friend-list {
     padding: 10px;
     .friend-block {
-
         margin-bottom: 10px;
         .friend-info {
             img {
@@ -691,15 +695,12 @@ form {
     .message-header {
         .message-sender {
             .message-sender-avatar {
-                img {
-
-                }
+                img {}
             }
             span {
                 color: $text-color2;
                 opacity: 0.6;
             }
-
         }
         .message-receiver {
             span {
@@ -721,7 +722,7 @@ form {
     .message-body {
         overflow: hidden;
         .message-content {
-            word-break:	break-all;
+            word-break: break-all;
             border-bottom: 1px solid $border-color;
             border-top: 1px solid $border-color;
             margin: 10px 0;
@@ -738,4 +739,76 @@ form {
     font-size: 10px;
     margin: 10px 0;
     text-align: right;
+}
+
+.card {
+    height: 100%;
+    .card-header {}
+    .card-body {
+        height: 250px;
+        overflow-y: scroll;
+    }
+    .card-footer {}
+}
+
+%message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px 0 20px 0;
+}
+
+@mixin message-wrapper($background-color, $name-color) {
+    background-color: $background-color;
+    padding: 10px;
+    border-radius: 3px; 
+    word-break: break-all;
+    position: relative;
+    .time {
+        color: $text-color2;
+        opacity: 0.6;
+        font-size: 10px;
+    }
+    .name {
+        color: $name-color;
+    }
+}
+
+.message-block {
+    .message-avatar-right {
+        img {
+            @extend %message-avatar;
+        }
+    }
+
+    .message-avatar-left {
+        img {
+            @extend %message-avatar;
+        }
+    }
+    .message-wrapper-right {
+        @include message-wrapper($primary-hover-color, $text-color1);
+        &:after {
+            top: 100%;
+            right: 10px;
+            border: solid transparent;
+            content: " ";
+            position: absolute;
+            border-top-color: $primary-hover-color;
+            border-width: 5px;
+        }
+
+    }
+    .message-wrapper-left {
+        @include message-wrapper($border-color, $primary-color);
+        &:after {
+            top: 100%;
+            left: 10px;
+            border: solid transparent;
+            content: " ";
+            position: absolute;
+            border-top-color: $border-color;
+            border-width: 5px;
+        }
+    }
 }
