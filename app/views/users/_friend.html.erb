@@ -1,29 +1,29 @@
 <% if current_user.is_block(current_user, user) == 1 %>
   <% if current_user.is_block_active(current_user, user) %>
-    <div class="col-sm-6 float-right">
+    <div class="col-md-6">
     <%= link_to "Unblock", user_relationship_path(current_user, current_user.get_relationship(current_user, user)) , class: "secondary-button", method: :put, remote: true%>
     </div>
   <% else %>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <%= link_to "Unfriend", user_relationship_path(current_user, current_user.get_relationship(current_user, user)) , class: "tertiary-button", method: :delete, remote: true%>
     </div>
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <%= link_to "Block", user_relationships_path(user_id: user), class: "secondary-button", method: :post, remote: true%>
     </div>
   </div>
   <%end%>
 <%else%>
   <% if current_user.is_block(current_user, user) == 2 %>
-    <div class="col-sm-6 float-right">
+    <div class="col-md-6">
       <%= link_to "Unblock", user_relationship_path(current_user, current_user.get_relationship(current_user, user)) , class: "secondary-button", method: :delete, remote: true%>
     </div>  
   <%else%>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <%= link_to "Unfriend", user_relationship_path(current_user, current_user.get_relationship(current_user, user)) , class: "tertiary-button", method: :delete, remote: true%>
     </div>
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <%= link_to "Block", user_relationship_path(current_user, current_user.get_relationship(current_user, user)) , class: "secondary-button", method: :put, remote: true%>
     </div>
   </div>  

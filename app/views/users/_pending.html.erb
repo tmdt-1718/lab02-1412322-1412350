@@ -1,4 +1,4 @@
-<div class="col-sm-6 float-right">
+<div class="col-md-6">
 <% if current_user.is_active(current_user, user) %>
   <%= link_to "Cancel friend request", user_relationship_path(current_user, current_user.get_relationship(current_user, user)), class: "secondary-button", method: :delete, remote: true%>
 <% else %>

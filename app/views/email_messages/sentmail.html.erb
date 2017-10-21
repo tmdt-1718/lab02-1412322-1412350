@@ -4,25 +4,17 @@
     </div>
     <div class="col-md-9">
       <div class="sidebar-content">
-      <h3>Sent Messages</h3>
-          <div class="row">
-            <div class="col-lg-3">
-               Recipient         
-            </div>
-            <div class="col-lg-7">
-               Email summerize
-            </div>
-            <div class="col-lg-2">
-               Send at
-            </div>
-          </div>
+      <h3><i class="fa-fw fa fa-send"></i> Sent Messages</h3>
         <%@sentmail_messages.each do |message|%>
           <%= link_to user_email_message_path(current_user, message) do %>
           <div class="row">
-            <div class="content-name col-md-3">
-              <%=message.get_conversation(message.conversation_id).opposed_user(current_user).name%>
-              <br>
-              <%=message.get_conversation(message.conversation_id).opposed_user(current_user).email%>
+            <div class="col-md-3">
+              <div class="content-name">
+                <%=message.get_conversation(message.conversation_id).opposed_user(current_user).name%>
+              </div>
+              <div class="content-email">
+                <%=message.get_conversation(message.conversation_id).opposed_user(current_user).email%>
+              </div>
             </div>
             <div class="content-message col-md-7">
               <%=message.content%>
