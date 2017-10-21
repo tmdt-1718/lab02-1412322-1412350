@@ -28,11 +28,10 @@
               </div>
 
               <div class="message-status">
-                Status: 
                 <%if @message.seen_at.present?%>
-                  <span class="seen">Seen</span> at: <%=@message.get_time(@message.seen_at)%>
+                  <span class="seen">Seen</span> at <%=@message.get_time(@message.seen_at)%>
                 <%else%>
-                  <span class="unseen">Unseen</span>
+                  Status: <span class="unseen">Unseen</span>
                 <%end%>
               </div>
             </div>
