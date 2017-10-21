@@ -8,8 +8,8 @@
       <div class="friend-list">
         <% @users.each do |user| %>
             <div class="friend-block row">
-              <div class="friend-info col-md-6">
-                <img src="https://bootdey.com/img/Content/user_1.jpg">
+              <div class="friend-info col-md-6 d-flex align-items-center">
+                <%= image_tag asset_url("defaultavatar.png"), class:"img-fluid" %>
                 <%=user.name%>
               </div>
               <div class="friend-action col-md-6 text-center d-flex align-items-center">

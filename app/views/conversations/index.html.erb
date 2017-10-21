@@ -4,14 +4,10 @@
   </div>
   <div class="col-md-9">
     <div class="sidebar-content">
-      <h3><i class="fa-fw fa fa-users"></i> Users List</h3>
+      <h3><i class="fa-fw fa fa-heart"></i> Friends List</h3>
       <div class="friend-list row">
         <% if @conversations.count == 0 %>
-          <div class="clearfix">
-            <div class="friend-name text-center">
-            <strong> Have no conversation yet! </strong> 
-          </div>
-          </div>
+          Have no conversation yet!
         <%else%>
         <div class="col-md-4">
           <% @conversations.each do |conversation| %>
@@ -19,10 +15,10 @@
               <% if conversation.messages.count > 0%>
                 <%= link_to conversation_path(conversation.id), remote: true do %>
                     <div class="friend-info row">
-                      <div class="col-md-4">
+                      <div class="col-md-3  d-flex align-items-center">
                         <%= image_tag asset_url("defaultavatar.png"), class:"img-fluid" %>
                       </div>
-                      <div class="col-md-8">
+                      <div class="col-md-9">
                         <%=conversation.opposed_user(current_user).name%>
                         <div class="last-message">
                           <%= @user.get_conversation_last_message(conversation.opposed_user(current_user).id, @user.id)%>

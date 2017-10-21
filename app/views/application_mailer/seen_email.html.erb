@@ -1,0 +1,10 @@
+<h1>Hi,
+  <%= @user.name %>
+</h1>
+
+<p>
+  Your friend <%=@recipient.name%>(<%=@recipient.email%>) 
+  has just seen a email message you sent to him/her at <%= @message.get_time(@message.created_at)%>!
+</p>
+
+<p>Have a great day!</p>
